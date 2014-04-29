@@ -42,7 +42,7 @@ void ListGoster(){
  }
 }
 
-void ListArama(){
+void ListEkle(){
  int ara;
  kisi *p,*q,*new_;
  p=head;
@@ -115,7 +115,7 @@ int secim;
 	scanf("%d",&secim);
 	switch(secim)
 	{
-		case 1: ListArama(); break;
+		case 1: ListEkle(); break;
 		case 2: ListSil(); break;
 	}
 	} while (1);
