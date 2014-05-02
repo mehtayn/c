@@ -10,41 +10,55 @@
 
 #include <stdio.h>
 #include <conio.h>
-int main(){
-	int N;
-	int i,j,buffer;
-	int ders[25];
-	printf("Kac kisilik sinif:");scanf("%d",&N);
-	for(i=0;i<N;i++){
-		printf("\n%d.Ogrenci ders notu giriniz:",(i+1));
-		scanf("%d",&ders[i]);
-	}
-	printf("******************************\n");
-	puts("SIRALANMAMIS HALI\n");
-		//Sıralanmamış hali:
-		for(i=0;i<N;i++){
-		printf("%d.Ogrenci ders notu: %d\n",(i+1),ders[i]);
-	}
-	//SIRALAMA ALGORİTMASI
-	
-	for(i=0;i<N-1;i++){
-	for(j=i+1;j<N;j++)
-		{
-		if(ders[i]<ders[j])
-						{
-						buffer=ders[i];
-						ders[i]=ders[j];
-						ders[j]=buffer;
-						}
-	}
+
+struct ogrenciler{
+int no[24];
+int mnot[24];
+}ogrenci;
+
+void selection(int k){
+int i,j,buffer,buffer2;
+for(i=0;i<k-1;i++){
+for(j=i+1;j<k;j++){
+if(ogrenci.mnot[i]>ogrenci.mnot[j])
+{
+buffer=ogrenci.mnot[i];
+ogrenci.mnot[i]=ogrenci.mnot[j];
+ogrenci.mnot[j]=buffer;
+buffer2=ogrenci.no[i];
+ogrenci.no[i]=ogrenci.no[j];
+ogrenci.no[j]=buffer2;
+}
+}
+}
+}
+
+main(){
+int N,i;
+printf("Kac kisilik sinif:");scanf("%d",&N);
+
+for(i=0;i<N;i++){
+printf("Ogrenci No:");
+scanf("%d",&ogrenci.no[i]);
+printf("\nMat ders Notu:");
+scanf("%d",&ogrenci.mnot[i]);
 }
 printf("******************************\n");
+puts("SIRALANMAMIS HALI\n");
+for(i=0;i<N;i++){
+printf("Ogrenci No:%d----Mat ders notu: %d\n",ogrenci.no[i],ogrenci.mnot[i]);
+}
+selection(N);
+
+//Sıralanmamış hali:
+printf("******************************\n");
 puts("SIRALANMIS HALI\n");
-		//Sıralanmış hali:
-		for(i=0;i<N;i++){
-		printf("%d.Ogrenci ders notu: %d\n",(i+1),ders[i]);
-	}
-	
-	return N;
-	getch();
+for(i=0;i<N;i++){
+printf("Ogrenci No:%d----Mat ders notu: %d\n",ogrenci.no[i],ogrenci.mnot[i]);
+}
+
+
+
+
+getch();
 }
