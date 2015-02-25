@@ -1,3 +1,5 @@
+www.mehtayn.com
+
 #include "stdio.h"
 #include "conio.h"
 #include "stdlib.h"//free ve malloc fonksiyonlarımızın çalışması için gereken kütüphanelerimiz
