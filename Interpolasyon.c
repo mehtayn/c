@@ -31,11 +31,11 @@ int main()
 		printf("f[%d] degerini giriniz: ",i);
 		scanf("%lf",&f[i]);
 	}
-	printf("aranan degerleri giriniz: ");
+	printf("aranan degeri giriniz: ");
 	scanf("%lf",&xa);
-	for(int k=0;k<3;k++)
+	for(int k=0;k<n;k++)
 	{
-		for(int j=0;j<3;j++)
+		for(int j=0;j<n;j++)
 		{
 			if(j!=k)
 			{
@@ -44,7 +44,7 @@ int main()
 		}
 		p+=f[k]*l[k];
 	}
-	printf("p(0.7)=%lf\n",p);
+	printf("p(%lf)=%lf\n",xa,p);
 	hata=fabs(p-karekok(xa));
 	printf("hata=%lf",hata);
 }
