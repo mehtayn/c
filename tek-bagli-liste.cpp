@@ -1,4 +1,4 @@
-www.mehtayn.com
+//www.mehtayn.com
 
 #include <stdio.h>
 #include <conio.h>
