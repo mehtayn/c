@@ -14,6 +14,7 @@ int main()
  	int n;
 	a=1;
 	b=2;
+	n=8;
 	h=(b-a)/n;
 	toplam=f(a)+f(b);
 	for(int j=1;j<=n;j++)
